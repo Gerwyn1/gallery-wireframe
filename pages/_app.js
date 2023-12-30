@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
       {(screenWidth) => {
         return (
           <>
-            <Navbar screenWidth={screenWidth}/>
+            <Navbar screenWidth={screenWidth} />
             <Component {...pageProps} screenWidth={screenWidth} />
           </>
         )

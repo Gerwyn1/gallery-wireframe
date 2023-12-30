@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Spinner from './Spinner'
 
 export default function Navbar({ screenWidth }) {
@@ -6,10 +7,11 @@ export default function Navbar({ screenWidth }) {
   }
 
   const url = window.location.href
-  const isHome = url.endsWith('home')
+  const isHome = url.endsWith('/')
   const isLogin = url.endsWith('login')
   const contactUs = url.endsWith('contact-us')
 
+  console.log(isHome)
   return (
     <nav class="bg-gray-800">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -59,11 +61,10 @@ export default function Navbar({ screenWidth }) {
             <div class="hidden sm:ml-6 sm:block">
               <div class="flex space-x-4">
                 <a
-                  href="/home"
-                  class={`${
+                  href="/"
+                  class={`bg-gray-900 ${
                     isHome ? 'bg-gray-900' : 'bg-transparent'
-                  }  text-white rounded-md px-3 py-2 text-sm font-medium"
-                  aria-current="page`}
+                  }  text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium`}
                 >
                   Home
                 </a>
@@ -92,10 +93,10 @@ export default function Navbar({ screenWidth }) {
       <div class="sm:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
           <a
-            href="/home"
+            href="/"
             class={`${
               isHome ? 'bg-gray-900' : 'bg-transparent'
-            } bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium`}
+            }   text-white block rounded-md px-3 py-2 text-base font-medium`}
             aria-current="page"
           >
             Home
